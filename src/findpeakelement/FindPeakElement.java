@@ -17,9 +17,25 @@ public class FindPeakElement {
      * @param args
      */
     public static void main(String[] args) {
-        int[] array = new int[] { 1, 4, 4, 5, 3 };
+        int[] array = new int[] { 1, 2, 2,2 };
+        System.out.println(findPeakElement(array));
         System.out.println(findPeakElement1(array));
         System.out.println(findPeakElement2(array));
+    }
+
+    public static int findPeakElement(int[] num) {
+        int index = -1;
+        if (num.length == 1) {
+            return index;
+        }
+
+        for (int i = 0; i < num.length - 1; i++) {
+            if (num[i] > num[i + 1]) {
+                index = i;
+            }
+        }
+
+        return index;
     }
 
     public static int findPeakElement1(int[] num) {
